@@ -91,7 +91,9 @@ interface PlayerProps {
   customAdditionalControls?: CustomUIModules
   customVolumeControls?: CustomUIModules
   children?: ReactNode
-  style?: CSSProperties
+  style?: CSSProperties,
+  hideStartTime?: boolean,
+  hideEndTime?: boolean
 }
 
 interface CustomIcons {
@@ -132,6 +134,8 @@ class H5AudioPlayer extends Component<PlayerProps> {
     customAdditionalControls: [RHAP_UI.LOOP],
     customVolumeControls: [RHAP_UI.VOLUME],
     layout: 'stacked',
+    hideStartTime: false,
+    hideEndTime: false
   }
 
   audio = createRef<HTMLAudioElement>()

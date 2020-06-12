@@ -1,6 +1,6 @@
 {
-  "name": "react-h5-audio-player",
-  "version": "3.0.0",
+  "name": "@hailin_yin/react-h5-audio-player",
+  "version": "1.0.3",
   "description": "A customizable React audio player. Written in TypeScript. Mobile compatible. Keyboard friendly",
   "main": "./lib/index.js",
   "module": "./es/index.js",
@@ -30,12 +30,12 @@
     "customizable",
     "typescript"
   ],
-  "author": "Hanz Luo",
+  "author": "hailin_yin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lhz516/react-h5-audio-player/issues"
+    "url": "https://github.com/danielsGit/react-h5-audio-player"
   },
-  "homepage": "https://github.com/lhz516/react-h5-audio-player#readme",
+  "homepage": "https://github.com/danielsGit/react-h5-audio-player#readme",
   "peerDependencies": {
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
