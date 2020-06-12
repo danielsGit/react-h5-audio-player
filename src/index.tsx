@@ -257,6 +257,8 @@ class H5AudioPlayer extends Component<PlayerProps> {
   renderUIModule = (comp: CustomUIModule, key: Key): ReactElement => {
     const {
       defaultCurrentTime,
+      hideStartTime,
+      hideEndTime,
       progressUpdateInterval,
       showDownloadProgress,
       showFilledProgress,
@@ -275,11 +277,15 @@ class H5AudioPlayer extends Component<PlayerProps> {
 
     switch (comp) {
       case RHAP_UI.CURRENT_TIME:
-        return (
-          <div key={key} id="rhap_current-time" className="rhap_time rhap_current-time">
-            <CurrentTime audio={this.audio.current} defaultCurrentTime={defaultCurrentTime} />
-          </div>
-        )
+        if (!hideStartTime) {
+          return (
+            <div key={key} id="rhap_current-time" className="rhap_time rhap_current-time">
+              <CurrentTime audio={this.audio.current} defaultCurrentTime={defaultCurrentTime} />
+            </div>
+          )
+        } else {
+          return null;
+        }
       case RHAP_UI.PROGRESS_BAR:
         return (
           <ProgressBar
@@ -292,11 +298,15 @@ class H5AudioPlayer extends Component<PlayerProps> {
           />
         )
       case RHAP_UI.DURATION:
-        return (
-          <div key={key} className="rhap_time rhap_total-time">
-            <Duration audio={this.audio.current} defaultDuration={defaultDuration} />
-          </div>
-        )
+        if (!hideEndTime) {
+          return (
+            <div key={key} className="rhap_time rhap_total-time">
+              <Duration audio={this.audio.current} defaultDuration={defaultDuration} />
+            </div>
+          )
+        } else {
+          return null;
+        }
       case RHAP_UI.ADDITIONAL_CONTROLS:
         return (
           <div key={key} className="rhap_additional-controls">
